@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: goldenrod; 
+    color: white;
+    margin: auto;
+}
+
+.whole-schedule, .whole-input {
+    margin: auto;
+}
+
+.card-header {
+    background-color: lightskyblue;
+    font-weight: bold;
+}
