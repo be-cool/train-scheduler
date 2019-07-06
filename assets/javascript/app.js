@@ -97,14 +97,14 @@ database.ref('/trains/').on("child_added", function (childSnapshot) {
   var todayStartTime = moment(todayString, "YYYY-MM-DD HH:mm").format("X");
   console.log(todayStartTime);
 
-  // Calculate the months worked using hardcore math
-  // To calculate the months worked
+
   var minutesSinceStart = moment().diff(moment(todayStartTime, "X"), "minutes");
   console.log(minutesSinceStart);
   var minutesAway = (frequency - (minutesSinceStart % frequency));
 
-  var nextTrainMinutes = todayMinutes + (20 - minutesSinceStart % 20);
-  var nextTrain = todayHours + ":" + nextTrainMinutes;
+  var nextTrain = moment().add(minutesAway, "minutes").format('LT');
+
+  
 
   // Create the new row
   var newRow = $("<tr>").append(
